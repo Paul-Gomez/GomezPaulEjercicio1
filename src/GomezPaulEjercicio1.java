@@ -104,4 +104,4 @@ public class GomezPaulEjercicio1 { //Defino la clase.
         scanner.close();
     }
 
-    //Métodos auxiliares (Mostrar matriz, actualizar matriz, calcular explosión y fin de juego).
+    //Métodos auxiliares (Mostrar matriz, actualizar matriz, calcular explosión y fin de juego)
