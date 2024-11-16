@@ -36,7 +36,7 @@ public class GomezPaulEjercicio1 { //Defino la clase.
         Utilizo dos bucles for para llenar las filas y columnas con números aleatorios.
         random.nextInt (9) va del 0 al 8, por ello pongo el +1.
          */
-         */
+
         int[][] matriz = new int[filas][columnas];
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
@@ -105,3 +105,52 @@ public class GomezPaulEjercicio1 { //Defino la clase.
     }
 
     //Métodos auxiliares (Mostrar matriz, actualizar matriz, calcular explosión y fin de juego)
+
+    // Función para mostrar la matriz. Uso el bucle for para leer la matriz.
+    private static void mostrarMatriz(int[][] matriz) {
+        for (int[] fila : matriz) {
+            for (int valor : fila) {
+                System.out.print(valor + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /* Función para calcular el valor de explosión.
+    Calcula la suma de los valores evitando el número en la intersección.
+     */
+    private static int calcularExplosion(int[][] matriz, int x, int y) {
+        int suma = 0;
+        for (int j = 0; j < matriz[0].length; j++) {
+            suma += matriz[x][j];
+        }
+        for (int i = 0; i < matriz.length; i++) {
+            if (i != x) {
+                suma += matriz[i][y];
+            }
+        }
+        return suma;
+    }
+
+    // Actualizar la matriz. Cambio los valores x,y a 0.
+    private static void actualizarMatriz(int[][] matriz, int x, int y) {
+        for (int j = 0; j < matriz[0].length; j++) {
+            matriz[x][j] = 0;
+        }
+        for (int i = 0; i < matriz.length; i++) {
+            matriz[i][y] = 0;
+        }
+    }
+
+    // Fin del Juego. Verifico que todos los valores de la matriz sean 0.
+    private static boolean esFinJuego(int[][] matriz) {
+        for (int[] fila : matriz) {
+            for (int valor : fila) {
+                if (valor != 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
