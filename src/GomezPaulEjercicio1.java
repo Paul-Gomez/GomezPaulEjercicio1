@@ -53,7 +53,7 @@ public class GomezPaulEjercicio1 { //Defino la clase.
             System.out.println("[1] Mostrar matriz");
             System.out.println("[2] Poner bomba");
 
-            //Leo la opción del usuario.
+            //Leo la opción del usuario..
             int opcion = scanner.hasNextInt() ? scanner.nextInt() : -1;
             scanner.nextLine(); // Limpio el buffer.
 
